@@ -313,6 +313,7 @@ _Goal: Show how to control page flow_
   - Click preview → Chapter 2 might be pushed to a left page
   - Revert to `page`
 - Show `avoid`:
+
   ```css
   .important-box {
     break-inside: avoid;
@@ -321,6 +322,7 @@ _Goal: Show how to control page flow_
 
   - Add HTML: `<div class="important-box"><p>Don't split me!</p></div>`
   - Click preview → box stays together
+
 - **Highlight**: "avoid tries to keep elements together, but will break if necessary"
 
 ### What NOT to show:
@@ -394,6 +396,7 @@ _Goal: Show how to fill margin areas with content_
 ### What to show:
 
 - Update `@page` rule with margin boxes:
+
   ```css
   @page {
     size: A4;
@@ -409,6 +412,7 @@ _Goal: Show how to fill margin areas with content_
     }
   }
   ```
+
 - Click preview → show text appears at top and bottom of every page
 - **Narrate**: "Margin boxes are areas in the margins we can fill with content"
 - List available margin boxes:
