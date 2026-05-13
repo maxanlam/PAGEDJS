@@ -1,13 +1,2 @@
 @media print {
-  @page {
-    size: A4;
-  }
-
-  h1 {
-    break-after: page;
-  }
-
-  .chapter {
-    break-before: page;
-  }
 }
