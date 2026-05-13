@@ -1,5 +1,13 @@
 @media print {
-  .no-print {
-    display: none;
+  @page {
+    size: A4;
+  }
+
+  h1 {
+    break-after: page;
+  }
+
+  .chapter {
+    break-before: page;
   }
 }

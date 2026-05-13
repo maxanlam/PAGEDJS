@@ -1,4 +1,4 @@
-# KD Lab pagedjs workshop
+# pagedjs workshop
 
 ## What is pagedjs / Was ist pagedjs
 
@@ -13,7 +13,7 @@ Dadurch können wir hilfreiche CSS Regeln benutzen, die der Browser normalerweis
 ### Print Preview / Druckvorschau
 
 To implement those print css rules pagedjs is simulating a print preview, which chunks our website into multiple pages and applies our custom styles.
-This also allows us to use the inspect dev tools, to debug our code and try out code directly in the browser.  
+This also allows us to use the inspect dev tools, to debug our code and try out code directly in the browser.
 
 Um diese und weitere Regeln umzusetzen simuliert pagedjs eine Druckvorschau, bei der unsere Webseite
 gechunkt wird und in Doppelseiten ausgeworfen wird. Dazu können wir auch DevTools benutzen
@@ -203,6 +203,7 @@ div.chapter-introduction {
     page: Introduction;
 }
 ```
+
 Every page which contains our container/wrapper can be styled now:
 
 Jede Seite auf der unser Container/Wrapper enthalten ist, kann nun seperat gestyled werden:
@@ -437,7 +438,6 @@ When printing a web page, the browser automatically creates the following counte
 
 This allows us to insert page numbers into our margin boxes:
 
-
 Der Browser erstellt automatisch beim Druck einer Webseite folgende Counter:
 
 - `page` (die aktuelle Seitenzahl)
@@ -464,7 +464,6 @@ To do this, we need the `string-set` property. This works like a variable that c
 As with the counter, we specify which element influences it. For example, we can store the text content of a headline
 as a string-set:
 
-
 Als letztes schauen wir uns noch an wie wir z.B. Titel von Artikeln in unsere Margin Boxen bekommen.
 Dafür brauchen wir die `string-set` Eigenschaft. Diese funktioniert wie eine Variable, die Text speichern kann.
 Wie beim Counter geben wir an welches Element Einfluss auf diese hat. Wir können zum Beispiel den Textinhalt einer Überschrift
@@ -477,6 +476,7 @@ h1 {
     /* Die variablen müssen nicht initiiert werden, sobald der Name auftaucht existiert diese als solche */
 }
 ```
+
 Then display the title in our margin boxes:
 
 Und dann den Titel in unseren Margin Boxen darstellen:
@@ -516,6 +516,7 @@ Another quite interesting option is to use running elements to place in our marg
 Eine andere interessante option sind running elements die wir in unsere Marginalränder einbetten können. Dafür benutzen wir die property `position: running(variableName);` die pagedjs dazu auffordert das Element aus dem pageflow zu nehmen und dort einzusetzen wo definiert `content: element(variableName);` ist.
 
 example / Beispiel
+
 ```CSS
 img.running-element {
     position: running(cornerSymbol);
@@ -549,6 +550,7 @@ z.B.:
         </li>
       </ul>
 ```
+
 In our text, the headline is then assigned the ID:
 
 In userem Text wird die Headline dann mit der Id versehen:
@@ -560,6 +562,7 @@ In userem Text wird die Headline dann mit der Id versehen:
     </h1>
     <!-- ... -->
 ```
+
 We can do this manually or [with JavaScript](https://pagedjs.org/posts/build-a-table-of-contents-from-your-html/).
 We then insert the page number using CSS with a pseudo-element.
 
@@ -571,7 +574,8 @@ Die Seitenzahl fügen wir dann über CSS mit einem pseudo-element ein.
     content: target-counter(attr(href), page);
 }
 ```
-CSS now fills the element with a counter for the page that is the target of our link. 
+
+CSS now fills the element with a counter for the page that is the target of our link.
 We can also use [CSS counters](https://pagedjs.org/documentation/6-generated-content/#generated-counters) for page and line numbers or similar numbering.
 
 CSS füllt jetzt das Element mit einem Counter der Seite die das Ziel unseres Links hat.
@@ -594,6 +598,7 @@ Der Vorteil von columns gegenüber einem css grid ist der Umfluss der im Print b
     column-width: 100mm
 }
 ```
+
 To break columns, we can use `break-after` and `break-before` with `column`.
 
 Um spalten umzubrechen können wir `break-after` und `break-before` mit `column` nutzen.
@@ -655,6 +660,7 @@ Diese könnt ihr anwenden um zum Beispiel Dinge in den Anschnitt zu ziehen:
     margin-left: calc(-1 * (var(--pagedjs-bleed-left) + var(--pagedjs-margin-left)))
 }
 ```
+
 Here, we give images on the left side a negative margin that is as large as the left margin + the bleed.
 
 Hier geben wir Bildern auf einer linken Seite ein negative Margin, die so groß ist wie die linke Margin + den Anschnitt.
@@ -671,5 +677,5 @@ Generierung der Druckvorschau hängen kann. (Für Fortgeschrittene)
 
 - [Imposition](https://gitlab.coko.foundation/pagedjs/pagedjs-plugins/booklet-imposition) (for imposing brochures / zum Ausschießen von Broschüren)
 - [full-page](https://gitlab.coko.foundation/pagedjs/pagedjs-plugins/full-page) (to display images or other elements across the entire surface of a page; but this can also be done simply with pure CSS
- / um Bilder oder andere Elemente vollflächig auf einer Seite darzustellen; geht aber auch einfach mit purem CSS)
+  / um Bilder oder andere Elemente vollflächig auf einer Seite darzustellen; geht aber auch einfach mit purem CSS)
 - [table of content](https://gitlab.coko.foundation/pagedjs/pagedjs-plugins/table-of-content) (to create a table of contents / um ein Inhaltsverzeichnis zu erstellen)
