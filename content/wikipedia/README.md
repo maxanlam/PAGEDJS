@@ -1,1 +1,0 @@
-Source: [https://de.wikipedia.org/wiki/Autogerechte_Stadt](https://de.wikipedia.org/wiki/Autogerechte_Stadt)
